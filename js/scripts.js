@@ -1,4 +1,4 @@
-var converterLoop = function(number) {
+var converterLoop = function(number) {      // ------- 4  Converter loop runs a for loop that runs through the inputed number which broken into an array with split then uses digit converter to match roman numerals per place holder
   var numeralLists = [{one:"I", five:"V", ten:"X"}, {one:"X", five:"L", ten:"C"}, {one:"C", five:"D", ten:"M"}, {one:"M", five:"-", ten:"-"}];
   //Break the number into an array and reverse it
   var number = number.split('').reverse();
@@ -11,7 +11,7 @@ var converterLoop = function(number) {
 };
 
 
-var digitConverter = function(inNumber, numeralList) {
+var digitConverter = function(inNumber, numeralList) {                //// 5
 // Pass in a number and a numeral list corresponding to the 10's place.
   var one = numeralList.one;
   var five = numeralList.five;
@@ -31,7 +31,7 @@ var digitConverter = function(inNumber, numeralList) {
 return number;
 };
 
-var inputCheck = function(input) {
+var inputCheck = function(input) {                      // ------ 3 checking input and running output through converterLoop
   // Check for valid input and ouput message for invalid, else run converterLoop.
   var output = "";
   if (!parseInt(input) || input.length > 4) {
@@ -49,9 +49,9 @@ $(document).ready(function(){
 
   $("#inputBox").submit(function(event){
     event.preventDefault();
-    var userNumber = $("#numberInput").val();
+    var userNumber = $("#numberInput").val(); // ----- 1  value is collected
 
-    var result = inputCheck(userNumber);
+    var result = inputCheck(userNumber); // ------ 2 checking input type by calling input check
     $("#numeralResult").text(result);
 
   });
